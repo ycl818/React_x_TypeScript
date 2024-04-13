@@ -1,14 +1,20 @@
-interface CourseGoalProps {
-  title: string;
-  description: string;
-}
+import { PropsWithChildren } from "react";
 
-const CourseGoal = ({ title, description }: CourseGoalProps) => {
+// import { type ReactNode } from "react";
+// interface CourseGoalProps {
+//   title: string;
+//   children: ReactNode;
+// }
+
+type CourseGoalProps = PropsWithChildren<{ title: string }>;
+
+const CourseGoal = ({ title, children }: CourseGoalProps) => {
+  console.log("🚀 ~ CourseGoal ~ children:", children);
   return (
     <article>
       <div>
         <h2>{title}</h2>
-        <p>{description}</p>
+        {children}
       </div>
       <button>Delete</button>
     </article>
