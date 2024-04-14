@@ -13,7 +13,6 @@ type CourseGoalProps = PropsWithChildren<{
 }>;
 
 const CourseGoal: FC<CourseGoalProps> = ({ id, title, children, onDelete }) => {
-  console.log("🚀 ~ CourseGoal ~ children:", children);
   return (
     <article>
       <div>
