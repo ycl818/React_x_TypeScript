@@ -1,4 +1,5 @@
 import Button from "./Components/Button";
+import Container from "./Components/Container";
 import Input from "./Components/Input";
 
 function App() {
@@ -13,6 +14,9 @@ function App() {
       <p>
         <Button href="https://reactjs.org">A link</Button>
       </p>
+
+      <Container as={Button} />
+      <Container as="div" />
     </main>
   );
 }
