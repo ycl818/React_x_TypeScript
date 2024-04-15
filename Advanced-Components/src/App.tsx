@@ -15,8 +15,10 @@ function App() {
         <Button href="https://reactjs.org">A link</Button>
       </p>
 
-      <Container as={Button} />
-      <Container as="div" />
+      <Container as={Button} onClick={() => {}} type="button">
+        Click Me
+      </Container>
+      {/* <Container as="div" /> */}
     </main>
   );
 }
