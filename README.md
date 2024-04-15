@@ -16,3 +16,13 @@ A Basic to-do list app with add-and-delete functionalities
 * Handling Events
 * Working with State
 * Handling Input via Forms & Refs
+
+---
+
+## Advanced-Components
+
+* Rendering Different Content Based on Props
+* Building Wrapper Components
+* Building Polymorphic Components
+* Forwarding Refs & Exposing Compoent APIS
+
