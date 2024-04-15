@@ -8,12 +8,10 @@ function App() {
       <Input label="Your Age" id="age" type="number" />
 
       <p>
-        <Button el="button">A button</Button>
+        <Button>A button</Button>
       </p>
       <p>
-        <Button el="anchor" href="https://reactjs.org">
-          A link
-        </Button>
+        <Button href="https://reactjs.org">A link</Button>
       </p>
     </main>
   );
