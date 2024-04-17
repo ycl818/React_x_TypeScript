@@ -2,14 +2,17 @@ import { useRef } from "react";
 import Button from "./Components/Button";
 import Container from "./Components/Container";
 import Input from "./Components/Input";
-import Form from "./Components/Form";
+import Form, { type FormHandles } from "./Components/Form";
 
 function App() {
   const input = useRef<HTMLInputElement>(null);
 
+  const customForm = useRef<FormHandles>(null);
+
   function handleSave(data: unknown) {
     const extractedData = data as { name: string; age: string }; // value extract from input always in string
     console.log(extractedData);
+    customForm.current?.clear();
   }
 
   return (
@@ -26,7 +29,7 @@ function App() {
       </Container>
       {/* <Container as="div" /> */}
 
-      <Form onSave={handleSave}>
+      <Form onSave={handleSave} ref={customForm}>
         <Input label="Your Name" id="name" type="string" ref={input} />
         <Input label="Your Age" id="age" type="number" />
         <p>
