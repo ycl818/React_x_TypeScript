@@ -26,3 +26,10 @@ A Basic to-do list app with add-and-delete functionalities
 * Building Polymorphic Components
 * Forwarding Refs & Exposing Compoent APIS
 
+---
+
+## Advanced State: Context & Reducers
+Using React's Context API & useReducer() with TypeScript
+
+* Using the Context API
+* Creating & Using Reducer Functions
