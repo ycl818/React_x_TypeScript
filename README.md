@@ -28,14 +28,18 @@ A Basic to-do list app with add-and-delete functionalities
 
 ---
 
+## Advanced State: Context & Reducers
+Using React's Context API & useReducer() with TypeScript
+
+* Using the Context API
+* Creating & Using Reducer Functions
+
+---
+
 ## Side Effects & Data Fetching
 
 Type-safe Side Effects & HTTP Requests
 
 * Using useEffect() with TypeScript
 * Fetching Data & Handling Responses
-## Advanced State: Context & Reducers
-Using React's Context API & useReducer() with TypeScript
 
-* Using the Context API
-* Creating & Using Reducer Functions
