@@ -28,6 +28,12 @@ A Basic to-do list app with add-and-delete functionalities
 
 ---
 
+## Side Effects & Data Fetching
+
+Type-safe Side Effects & HTTP Requests
+
+* Using useEffect() with TypeScript
+* Fetching Data & Handling Responses
 ## Advanced State: Context & Reducers
 Using React's Context API & useReducer() with TypeScript
 
