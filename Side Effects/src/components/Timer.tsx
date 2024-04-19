@@ -1,23 +1,39 @@
 import Container from "./UI/Container.tsx";
-import { type Timer as TimerProps } from "../store/timers-context.tsx";
+import {
+  useTimersContext,
+  type Timer as TimerProps,
+} from "../store/timers-context.tsx";
 import { useEffect, useRef, useState } from "react";
 
 export default function Timer({ name, duration }: TimerProps) {
   const [remainingState, setRemainingState] = useState(duration * 1000);
   const interval = useRef<number | null>(null);
+  const { isRunning } = useTimersContext();
 
   if (remainingState <= 0 && interval.current) {
     clearInterval(interval.current);
   }
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      setRemainingState((prevTime) => prevTime - 50);
-    }, 50);
-    interval.current = timer;
+    let timer: number;
+
+    if (isRunning) {
+      timer = setInterval(() => {
+        setRemainingState((prevTime) => {
+          if (prevTime <= 0) {
+            return prevTime;
+          }
+          return prevTime - 50;
+        });
+      }, 50);
+      interval.current = timer;
+    } else if (interval.current) {
+      // No timer variable, so use interval.current
+      clearInterval(interval.current);
+    }
 
     return () => clearInterval(timer);
-  }, []);
+  }, [isRunning]);
 
   const formattedRemainingTime = (remainingState / 1000).toFixed(2);
 
