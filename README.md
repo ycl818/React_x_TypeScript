@@ -43,3 +43,13 @@ Type-safe Side Effects & HTTP Requests
 * Using useEffect() with TypeScript
 * Fetching Data & Handling Responses
 
+---
+
+## Using Redux with TypeSctipt
+
+Using Rredux for State Management
+
+* Redux Setup & How it works with TypeSctipt
+* Handling State
+* Dispatching Acitons
+  
