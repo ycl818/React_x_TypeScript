@@ -1,6 +1,6 @@
 import { type PayloadAction, createSlice } from "@reduxjs/toolkit";
 
-type CartItem = {
+export type CartItem = {
   id: string;
   title: string;
   price: number;
@@ -36,6 +36,7 @@ export const cartSlice = createSlice({
       const itemIndex = state.items.findIndex((item) => item.id === action.payload);
 
       if(state.items[itemIndex].quantity === 1){
+        state.items = state.items.filter((item) => item.id !== action.payload);
       } else {
         state.items[itemIndex].quantity--;
       }
