@@ -13,6 +13,8 @@ type ButtonProps = ComponentPropsWithoutRef<"button"> &
 
 type ButtonLinkProps = LinkProps & BaseProps & { to: string };
 
+// Using a type guard with a type predicate to determine
+//if the received props are for a <button> or <Link>
 function isLinkProps(
   props: ButtonProps | ButtonLinkProps
 ): props is ButtonLinkProps {
@@ -21,6 +23,9 @@ function isLinkProps(
 
 const Button = (props: ButtonProps | ButtonLinkProps) => {
   if (isLinkProps(props)) {
+    // Destructuring inside the `if` statement to ensure TypeScript
+    //"understands" that `props` is of type `ButtonLinkProps` and `
+    //otherProps` will therefore only contain props that work on <Link>
     const { children, textOnly, ...otherProps } = props;
 
     return (
@@ -32,7 +37,9 @@ const Button = (props: ButtonProps | ButtonLinkProps) => {
       </Link>
     );
   }
-
+  // Destructuring after the `if` statement to ensure TypeScript
+  //"understands" that `props` is of type `ButtonProps` and
+  //`otherProps` will therefore only contain props that work on <button>
   const { children, textOnly, ...otherProps } = props;
 
   return (
