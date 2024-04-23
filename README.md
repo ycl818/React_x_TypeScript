@@ -1,3 +1,16 @@
+## Challenge-Book A Session
+
+ Review how to create reusable components in 
+* Button (react-router-link, and Normal Button)
+* Input (acceptable for general type of input with label)
+* Modal(practice with forwardRef with useImperativeHandle for specific function) and use create portal
+
+Create Context for cross-component sharing
+
+![image](https://github.com/ycl818/React_x_TypeScript/assets/74204587/71d1199a-1681-4ba3-92da-d5f693e67846)
+
+---
+
 ## TypeScript Basics
 * Installing & Using TypeScript
   * npm install typescript --save-dev
