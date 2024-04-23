@@ -1,4 +1,4 @@
-import { createContext, useContext, useReducer } from "react";
+import { ReactNode, createContext, useContext, useReducer } from "react";
 
 export type Session = {
   id: string;
@@ -71,7 +71,7 @@ function sessionsReducer(state: SessionState, action: SessionsAction) {
 export default function SessionsContextProvider({
   children,
 }: {
-  children: React.ReactNode;
+  children: ReactNode;
 }) {
   const [sessionsState, dispatch] = useReducer(sessionsReducer, {
     upcomingSessions: [],
@@ -91,7 +91,9 @@ export default function SessionsContextProvider({
     cancelSession,
   };
 
-  <SessionsContext.Provider value={ctxValue}>
-    {children}
-  </SessionsContext.Provider>;
+  return (
+    <SessionsContext.Provider value={ctxValue}>
+      {children}
+    </SessionsContext.Provider>
+  );
 }

@@ -6,7 +6,7 @@ type ModalProps = {
   onClose: () => void;
 };
 
-type ModalHandle = {
+export type ModalHandle = {
   open: () => void;
 };
 
