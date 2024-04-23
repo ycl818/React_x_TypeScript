@@ -11,11 +11,11 @@ type SessionListProps = {
 
 const SessionList = ({ sessions }: SessionListProps) => {
   return (
-    <ul>
+    <ul id="sessions-list">
       {sessions.map((session) => {
         return (
           <li key={session.id}>
-            <SessionListItem />
+            <SessionListItem {...session} />
           </li>
         );
       })}
